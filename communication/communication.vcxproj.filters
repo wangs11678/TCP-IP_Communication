@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tcpip_client.cpp">
+    <None Include="Test.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sendData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -41,6 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Program Files %28x86%29\MATLAB\R2014a\extern\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Program Files %28x86%29\MATLAB\R2014a\extern\lib\win64\microsoft;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -56,6 +58,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libmx.lib;libeng.lib;libmat.lib;libmex.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug\(ProjectName).mexw64</OutputFile>
+      <ModuleDefinitionFile>Test.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,7 +81,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tcpip_client.cpp" />
+    <ClCompile Include="sendData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Test.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

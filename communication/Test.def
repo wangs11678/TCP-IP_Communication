@@ -1,0 +1,2 @@
+LIBRARY ;"Test"
+EXPORTS mexFunction
