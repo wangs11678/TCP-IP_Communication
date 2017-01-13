@@ -34,12 +34,14 @@ Matlab调用C++程序进行数据传输
 
 附录：
 
-
 #include <WinSock2.h>  
+
 #include <stdio.h>  
+
 #include "mex.h"
+
 #pragma comment(lib, "ws2_32.lib")  
-  
+
 struct Package
 {
 	int packageLen;
