@@ -14,9 +14,7 @@ Matlab调用C++程序进行数据传输
 
 　　连接器 -> 输入 -> 附加依赖项 输入libmx.lib libeng.lib libmat.lib libmex.lib 这四个lib文件。
 
-　　在Linker-General-Output File:改成
-
-　　　　　　　　　　　　　　　　　　　.\Debug\(ProjectName).mexw32（64位系统相应改成64）
+　　在Linker-General-Output File:改成 .\Debug\(ProjectName).mexw32（64位系统相应改成64）
 
 　　Source Files- Add - New Item新建模块定义文件Test.def
 
@@ -28,20 +26,18 @@ Matlab调用C++程序进行数据传输
 　　在Linker-Input-Module Definition File添加：Test.def
 
 4、在matlab中cd到vs项目目录（例：cd F:\project\vs\communication\communication\），输入mex XXX.cpp
-
 生成一个sendData.mexw64，在matlab中直接调用XXX.mexw64就行。
 
 
 附录：
 
+
+
+
 #include <WinSock2.h>  
-
 #include <stdio.h>  
-
 #include "mex.h"
-
 #pragma comment(lib, "ws2_32.lib")  
-
 struct Package
 {
 	int packageLen;
@@ -49,7 +45,6 @@ struct Package
 	float message;
 	wchar_t pend;
 };
-
 void sendData(int len, int no, float mess, wchar_t end)
 {
 	//加载套接字  
